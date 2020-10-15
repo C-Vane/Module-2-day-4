@@ -1,0 +1,79 @@
+<!doctype html>
+<!--
+    WELCOME TO THE STRIVE TEAM GENERATOR!
+    The app is pretty straight forward, use Bootstrap to add the following features:
+    - The user can add a list of names
+    - The user can set the number of teams
+    - Every time the user clicks on the "assign" button, a random name is placed in a team and removed from the list
+    - Each team should be inside a "column"
+    - [EXTRA] Create a button to remove an user from a team, putting him back in the main list
+    - [EXTRA] Create a button to reset the state of the app
+-->
+<html lang="en">
+
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="/index.css" media="screen" />
+
+    </head>
+
+    <body>
+        <h1>WELCOME TO THE STRIVE TEAM GENERATOR</h1>
+        <div class="container">
+            <h4>List of Names</h4><br>
+            <ul id="list">
+
+            </ul>
+
+            <div class="input-group mb-3">
+
+                <input type="text" id="name" class="form-control" placeholder="Add Name" aria-label="name"
+                    aria-describedby="button-addon2">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon2"
+                        onclick="addName()">Add</button>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <h4 id="teams">Number of Teams</h4><br>
+            <div class="input-group mb-3">
+
+                <input id="numteams" type="number" min="0" max="60" value="10" class="form-control"
+                    aria-label="NUmber of Teams" aria-describedby="button-addon">
+                <div class="input-group-append">
+                    <input class="btn btn-outline-secondary" type="submit" id="button-addon" value="Create Table"
+                        onclick="teamTable()">
+                </div>
+                <div class="input-group-append">
+                    <input class="btn btn-outline-secondary" type="submit" id="buttonforassign" value="Assign"
+                        onclick="teamAssign()">
+                </div>
+            </div>
+        </div>
+        <div class="container" id="teams">
+
+
+        </div>
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+        <script src="/index.js"></script>
+    </body>
+
+</html>
