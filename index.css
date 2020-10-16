@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Open+Sans+Condensed:wght@300&display=swap");
+/*font-family: 'Montserrat', sans-serif;
+font-family: 'Open Sans Condensed', sans-serif;*/
+* {
+  font-family: "Open Sans Condensed", sans-serif;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+}
+b {
+  color: #00ff84;
+  font-size: 50px;
+}
+.navbar {
+  text-align: center;
+}
+h1 {
+  font-family: "Montserrat", sans-serif;
+  color: #00ff84;
+  margin: auto;
+  margin-left: 50px;
+  padding: 50px;
+}
+#name {
+  max-width: 250px;
+}
+#numteams {
+  max-width: 100px;
+}
+#buttonforassign {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+#resetbtn {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+#lastbtn,
+#teamslist,
+#list {
+  margin: auto;
+  margin-left: 100px;
+}
+#lastbtn {
+  float: right;
+  margin-bottom: 50px;
+  margin-right: 50px;
+}
+.container {
+  margin: auto;
+  margin-top: 100px;
+}
+li {
+  padding: 0px;
+}
+ul li::before {
+  content: "\2022";
+  color: #00ff84;
+  font-weight: bold;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-left: -21px;
+}
+.cancel-btn {
+  background-color: transparent;
+  color: #00ff84;
+  border: none;
+  padding: 5px;
+  font-weight: 900;
+  position: relative;
+  top: -10px;
+  left: 10px;
+}
+.cancel-btn:hover {
+  color: red;
+  text-shadow: 0 0 15px #00ff84;
+}
+.btn:hover {
+  background-color: #00ff84;
+}
+#Table {
+  max-width: 1200px;
+  min-width: 700px;
+}
+td {
+  border: none;
+  padding: 15px;
+  margin: 10px;
+  min-width: 100px;
+  min-height: 30px;
+}
+.teamT {
+  font-size: 30px;
+  font-weight: 900;
+}
+.teamM {
+  padding: 0;
+  margin: 0;
+}

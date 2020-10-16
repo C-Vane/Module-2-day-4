@@ -10,6 +10,7 @@
     - [EXTRA] Create a button to reset the state of the app
 -->
 <html lang="en">
+    <title>WELCOME TO THE STRIVE TEAM GENERATOR! </title>
 
     <head>
         <!-- Required meta tags -->
@@ -24,16 +25,19 @@
     </head>
 
     <body>
-        <h1>WELCOME TO THE STRIVE TEAM GENERATOR</h1>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <img src="/image/strive_white.png" alt="logo" id="logo" style="width: 200px;" />
+            <h1>WELCOME TO THE STRIVE <br> TEAM GENERATOR</h1>
+        </nav>
         <div class="container">
-            <h4>List of Names</h4><br>
+            <h4><b>/</b>List of Names</h4><br>
             <ul id="list">
 
             </ul>
 
             <div class="input-group mb-3">
 
-                <input type="text" id="name" class="form-control" placeholder="Add Name" aria-label="name"
+                <input type="text" id="name" class="form-control w-4" placeholder="Add Name" aria-label="name"
                     aria-describedby="button-addon2">
                 <div class="input-group-append">
                     <button class="btn btn-outline-secondary" type="button" id="button-addon2"
@@ -42,25 +46,30 @@
             </div>
         </div>
         <div class="container">
-            <h4 id="teams">Number of Teams</h4><br>
+            <h4 id="teams"><b>/</b>Number of Teams</h4><br>
             <div class="input-group mb-3">
 
-                <input id="numteams" type="number" min="0" max="60" value="10" class="form-control"
+                <input id="numteams" type="number" min="0" max="60" value="2" class="form-control"
                     aria-label="NUmber of Teams" aria-describedby="button-addon">
                 <div class="input-group-append">
                     <input class="btn btn-outline-secondary" type="submit" id="button-addon" value="Create Table"
                         onclick="teamTable()">
                 </div>
-                <div class="input-group-append">
-                    <input class="btn btn-outline-secondary" type="submit" id="buttonforassign" value="Assign"
-                        onclick="teamAssign()">
-                </div>
+
             </div>
         </div>
-        <div class="container" id="teams">
+
+        <div class="container" id="teamslist">
 
 
         </div>
+        <div class="input-group-append" id="lastbtn">
+            <input class="btn btn-outline-secondary" type="submit" id="buttonforassign" value="Assign"
+                onclick="teamAssign()">
+            <input class="btn btn-outline-secondary" type="reset" id="resetbtn" value="Reset"
+                onClick="window.location.reload()">
+        </div>
+
 
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
