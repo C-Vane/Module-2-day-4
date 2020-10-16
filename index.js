@@ -212,7 +212,7 @@ const teamAssign = () => {
         j++;
         k = 0;
     };
-    if (j > (Math.ceil(names.length / num_team.value) + 1)) {
+    if (j > (Math.ceil(names.length / num_team.value) + 2)) {
         i++;
         j = 1;
     };

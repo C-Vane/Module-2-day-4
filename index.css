@@ -85,7 +85,7 @@ ul li::before {
 }
 td {
   border: none;
-  padding: 15px;
+  padding: 16px;
   margin: 10px;
   min-width: 100px;
   min-height: 30px;
