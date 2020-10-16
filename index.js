@@ -114,7 +114,7 @@ const teamAssign = () => {
 };
  */
 const teamTable = () => {
-  
+
     const num_team = document.getElementById("numteams");
     const names = document.querySelectorAll("li");
     if (names.length < num_team.value) {
@@ -156,29 +156,12 @@ const teamTable = () => {
     }
     bl = true;
 }
-let i = 0, j = 1; k = 0;
+let i = 0, j = 1;
 const teamAssign = () => {
     //Get parent element and create grid
     if (bl === false) {
         alert("Please Create Teams");
     }
-    console.log("i,j,k", i, j, k)
-    const num_team = document.getElementById("numteams");
-    const table = document.querySelectorAll("#Table");
-    const rows = table[i].querySelectorAll("#row");
-    const col = rows[j].querySelectorAll(".teamM");
-    const names = document.querySelectorAll("li");
-    //Reset if no more names in the list
-    if ((names.length) === 0) {
-        i = 0;
-        j = 0;
-        k = 0;
-        alert("Please add names to assign");
-        return;
-    }
-    const rand = Math.floor(Math.random() * (names.length - 1));
-    col[k].innerText = names[rand].innerText;
-    names[rand].remove();
 
 
 
@@ -186,9 +169,7 @@ const teamAssign = () => {
     const cancel_btn = document.createElement("input");
     (cancel_btn.type = "button"), (cancel_btn.value = "x"), cancel_btn.classList.add("cancel-btn");
     cancel_btn.addEventListener("click", (event) => {
-        if (k === 0) j--;
-        else if (j === 0 && k === 0) i--;
-        else k--;
+
         const ul_item = document.getElementById("list");
         const new_li = document.createElement("li");
         new_li.innerText = cancel_btn.parentElement.innerText;
@@ -203,19 +184,49 @@ const teamAssign = () => {
 
         new_li.appendChild(cancel_btn2);
 
-        cancel_btn.parentElement.innerText="---------";
+        cancel_btn.parentElement.innerText = "---------";
         cancel_btn.remove();
     });
-    col[k].appendChild(cancel_btn);
-    k++;
-    if (k > 3 || k > num_team.value - (4 * i) - 1) {
-        j++;
-        k = 0;
-    };
-    if (j > (Math.ceil(names.length / num_team.value) + 1)) {
-        i++;
-        j = 1;
-    };
+    const num_team = document.getElementById("numteams");
+    const names = document.querySelectorAll("li");
+
+    const rand = Math.floor(Math.random() * (names.length - 1));
+
+
+    for (let k = 0; k < 4 && k < num_team.value - (4 * i); k++) {
+        console.log("i,j,k", i, j, k)
+        
+        const table = document.querySelectorAll("#Table");
+        const rows = table[i].querySelectorAll("#row");
+        const col = rows[j].querySelectorAll(".teamM");
+        //Reset if no more names in the list
+        if ((names.length) === 0) {
+
+            alert("Please add names to assign");
+            return;
+        };
+
+        if (col[k].innerText === '---------') {
+
+            col[k].innerText = names[rand].innerText;
+
+            names[rand].remove();
+
+            col[k].appendChild(cancel_btn);
+            
+            return;
+        };
+        if (j < (Math.ceil(names.length / num_team.value) + 1) && k > 3 ||  k > (num_team.value - (4 * i)-1)) {
+            j++;
+          
+        } else {
+            j = 1;
+            i++;
+        };
+        if (i >(Math.ceil(num_team.value / 4))) i = 0;
+    
+    }
+    
 }
 
 
