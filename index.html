@@ -1,381 +1,88 @@
 <!doctype html>
+<!--
+    WELCOME TO THE STRIVE TEAM GENERATOR!
+    The app is pretty straight forward, use Bootstrap to add the following features:
+    - The user can add a list of names
+    - The user can set the number of teams
+    - Every time the user clicks on the "assign" button, a random name is placed in a team and removed from the list
+    - Each team should be inside a "column"
+    - [EXTRA] Create a button to remove an user from a team, putting him back in the main list
+    - [EXTRA] Create a button to reset the state of the app
+-->
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>WELCOME TO THE STRIVE TEAM GENERATOR! </title>
 
-    <!-- Bootstrap CSS -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
-    integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-<!--NAVBAR START-->
-<nav class="navbar navbar-expand-lg navbar-dark">
-    <a class="navbar-brand mt-5" href="#"><a href="https://fontmeme.com/netflix-font/"><img src="https://fontmeme.com/permalink/201016/43d068e8e91bfc2ab70c55cd3afe6508.png" alt="netflix-font" border="0" class="mt-2"></a></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <i class="fas fa-bars"></i>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Tv shows</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Movies</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Recently Added</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">My list</a>
-          </li>
-        </li>
-      </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <i class="fas fa-search mr-sm-2"></i>
-        <a class="nav-link mr-sm-2">KIDS</a>
-        <a href="settings.html"><i class="fas fa-bell"></i></a>
-       <a href="account.html"> <img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/366be133850498.56ba69ac36858.png" width=30></a>
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
-            </a>
-        </form>
-    </div>
-  </nav>
-  <!--NAVBAR END-->
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <!--TRENDING MOVIES SECTION-->
-  <div class="title ml-4 mt-3 text-center">
-  <h1>TV Shows</h1>  
-  <select name="genres" id="genres" class="mt-1">
-    <option value="volvo">Genres</option>
-    <option value="saab">Romantic</option>
-    <option value="mercedes">Action</option>
-    <option value="audi">Country</option>
-  </select>
-</div>  
-      <h5 class="sm-text-center ml-4 mt-3">Trending now</h5>
-  <div class="container-fluid">
-      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-sm-12 col-md-6 col-lg-2 mx-auto text-center">
-                        <img src="img/blackmirror.jpg" class="img-fluid">
-                    </div>
-                    <div class="col-sm-12 col-md-6 col-lg-2 tablet">
-                      <img src="img/dark.jpg" class="img-fluid">
-                  </div>
-                  <div class="col-2 desktop">
-                      <img src="img/theoa.jpg" class="img-fluid">
-                  </div>
-                  <div class="col-2 desktop">
-                      <img src="img/himym.jpg" class="img-fluid">
-                  </div>
-                  <div class="col-2 desktop">
-                      <img src="img/tedbundy.jpg" class="img-fluid">
-                  </div>
-                  <div class="col-2 desktop">
-                      <img src="img/strangerthings.jpg" class="img-fluid">
-                  </div>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="/index.css" media="screen" />
+
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <img src="/image/strive_white.png" alt="logo" id="logo" style="width: 200px;" />
+            <h1>WELCOME TO THE STRIVE <br> TEAM GENERATOR</h1>
+        </nav>
+        <div class="container">
+            <h4><b>/</b>List of Names</h4><br>
+            <ul id="list">
+
+            </ul>
+
+            <div class="input-group mb-3">
+
+                <input type="text" id="name" class="form-control w-4" placeholder="Add Name" aria-label="name"
+                    aria-describedby="button-addon2">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon2"
+                        onclick="addName()">Add</button>
                 </div>
             </div>
-          </div>
-          <div class="carousel-item">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-sm-12 col-md-6 col-lg-2 mx-auto text-center">
-                        <img src="img/tedbundy.jpg" class="img-fluid">
-                    </div>
-                    <div class="col-sm-12 col-md-6 col-lg-2 tablet">
-                      <img src="img/dave.jpg" class="img-fluid">
-                  </div>
-                  <div class="col-2 desktop">
-                      <img src="img/lucifer.jpg" class="img-fluid">
-                  </div>
-                  <div class="col-2 desktop">
-                      <img src="img/blackmirror.jpg" class="img-fluid">
-                  </div>
-                  <div class="col-2 desktop">
-                      <img src="img/when.jpg" class="img-fluid">
-                  </div>
-                  <div class="col-2 desktop">
-                      <img src="img/you.jpg" class="img-fluid">
-                  </div>
+        </div>
+        <div class="container">
+            <h4 id="teams"><b>/</b>Number of Teams</h4><br>
+            <div class="input-group mb-3">
+
+                <input id="numteams" type="number" min="0" max="60" value="2" class="form-control"
+                    aria-label="NUmber of Teams" aria-describedby="button-addon">
+                <div class="input-group-append">
+                    <input class="btn btn-outline-secondary" type="submit" id="button-addon" value="Create Table"
+                        onclick="teamTable()">
                 </div>
+
             </div>
-          </div>
-          <div class="carousel-item">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-sm-12 col-md-6 col-lg-2 mx-auto text-center">
-                        <img src="img/you.jpg" class="img-fluid">
-                    </div>
-                    <div class="col-2 col-md-6 col-lg-2 tablet">
-                      <img src="img/dark.jpg" class="img-fluid">
-                  </div>
-                  <div class="col-2 desktop">
-                      <img src="img/97a843f7a144e87903be2e0f4063ff26ff8d8fcf.jpg" class="img-fluid">
-                  </div>
-                  <div class="col-2 desktop">
-                      <img src="img/himym.jpg" class="img-fluid">
-                  </div>
-                  <div class="col-2 desktop">
-                      <img src="img/when.jpg" class="img-fluid">
-                  </div>
-                  <div class="col-2 desktop">
-                      <img src="img/13reasons-lede-1300x735.jpg" class="img-fluid">
-                  </div>
-                </div>
-            </div>
-          </div>
+        </div>
+
+        <div class="container" id="teamslist">
+
 
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
-    </div>
-
-
-    <h5 class="sm-text-center ml-4 mt-4">Watch It Again</h5>
-  <div class="container-fluid">
-      <div id="carouselExampleControls1" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-              <div class="container-fluid">
-                  <div class="row">
-                      <div class="col-sm-12 col-md-6 col-lg-2 mx-auto text-center">
-                          <img src="img/umbrella.jpeg" class="img-fluid">
-                      </div>
-                      <div class="col-sm-12 col-md-6 col-lg-2 tablet">
-                        <img src="img/strangerthings.jpg" class="img-fluid">
-                    </div>
-                    <div class="col-2 desktop">
-                        <img src="img/lucifer.jpg" class="img-fluid">
-                    </div>
-                    <div class="col-2 desktop">
-                        <img src="img/97a843f7a144e87903be2e0f4063ff26ff8d8fcf.jpg" class="img-fluid">
-                    </div>
-                    <div class="col-2 desktop">
-                        <img src="img/13reasons-lede-1300x735.jpg" class="img-fluid">
-                    </div>
-                    <div class="col-2 desktop">
-                        <img src="img/blackmirror.jpg" class="img-fluid">
-                    </div>
-                  </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="container-fluid">
-                  <div class="row">
-                      <div class="col-sm-12 col-md-6 col-lg-2 mx-auto text-center">
-                          <img src="img/theoa.jpg" class="img-fluid">
-                      </div>
-                      <div class="col-sm-12 col-md-6 col-lg-2 tablet">
-                        <img src="img/comedians.jpg" class="img-fluid">
-                    </div>
-                    <div class="col-2 desktop">
-                        <img src="img/casadepapel.jpg" class="img-fluid">
-                    </div>
-                    <div class="col-2 desktop">
-                        <img src="img/himym.jpg" class="img-fluid">
-                    </div>
-                    <div class="col-2 desktop">
-                        <img src="img/you.jpg" class="img-fluid">
-                    </div>
-                    <div class="col-2 desktop">
-                        <img src="img/strangerthings.jpg" class="img-fluid">
-                    </div>
-                  </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="container-fluid">
-                  <div class="row">
-                      <div class="col-sm-12 col-md-6 col-lg-2 mx-auto text-center">
-                          <img src="img/umbrella.jpeg" class="img-fluid">
-                      </div>
-                      <div class="col-2 col-md-6 col-lg-2 tablet">
-                        <img src="img/you.jpg" class="img-fluid">
-                    </div>
-                    <div class="col-2 desktop">
-                        <img src="img/crown.jpg" class="img-fluid">
-                    </div>
-                    <div class="col-2 desktop">
-                        <img src="img/blackmirror.jpg" class="img-fluid">
-                    </div>
-                    <div class="col-2 desktop">
-                        <img src="img/lucifer.jpg" class="img-fluid">
-                    </div>
-                    <div class="col-2 desktop">
-                        <img src="img/dark.jpg" class="img-fluid">
-                    </div>
-                  </div>
-              </div>
-            </div>
-  
-          </div>
-        <a class="carousel-control-prev" href="#carouselExampleControls1" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleControls1" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
-    </div>
-
-
-    <h5 class="sm-text-center ml-4 mt-4">New Releases</h5>
-  <div class="container-fluid">
-      <div id="carouselExampleControls2" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-              <div class="container-fluid">
-                  <div class="row">
-                      <div class="col-sm-12 col-md-6 col-lg-2 mx-auto text-center">
-                          <img src="img/himym.jpg" class="img-fluid">
-                      </div>
-                      <div class="col-sm-12 col-md-6 col-lg-2 tablet">
-                        <img src="img/theoa.jpg" class="img-fluid">
-                    </div>
-                    <div class="col-2 desktop">
-                        <img src="img/umbrella.jpeg" class="img-fluid">
-                    </div>
-                    <div class="col-2 desktop">
-                        <img src="img/tedbundy.jpg" class="img-fluid">
-                    </div>
-                    <div class="col-2 desktop">
-                        <img src="img/strangerthings.jpg" class="img-fluid">
-                    </div>
-                    <div class="col-2 desktop">
-                        <img src="img/dave.jpg" class="img-fluid">
-                    </div>
-                  </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="container-fluid">
-                  <div class="row">
-                      <div class="col-sm-12 col-md-6 col-lg-2 mx-auto text-center">
-                          <img src="img/dark.jpg" class="img-fluid">
-                      </div>
-                      <div class="col-sm-12 col-md-6 col-lg-2 tablet">
-                        <img src="img/casadepapel.jpg" class="img-fluid">
-                    </div>
-                    <div class="col-2 desktop">
-                        <img src="img/when.jpg" class="img-fluid">
-                    </div>
-                    <div class="col-2 desktop">
-                        <img src="img/crown.jpg" class="img-fluid">
-                    </div>
-                    <div class="col-2 desktop">
-                        <img src="img/you.jpg" class="img-fluid">
-                    </div>
-                    <div class="col-2 desktop">
-                        <img src="img/lucifer.jpg" class="img-fluid">
-                    </div>
-                  </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="container-fluid">
-                  <div class="row">
-                      <div class="col-sm-12 col-md-6 col-lg-2 mx-auto text-center">
-                          <img src="img/97a843f7a144e87903be2e0f4063ff26ff8d8fcf.jpg" class="img-fluid">
-                      </div>
-                      <div class="col-2 col-md-6 col-lg-2 tablet">
-                        <img src="img/blackmirror.jpg" class="img-fluid">
-                    </div>
-                    <div class="col-2 desktop">
-                        <img src="img/theoa.jpg" class="img-fluid">
-                    </div>
-                    <div class="col-2 desktop">
-                        <img src="img/strangerthings.jpg" class="img-fluid">
-                    </div>
-                    <div class="col-2 desktop">
-                        <img src="img/dave.jpg" class="img-fluid">
-                    </div>
-                    <div class="col-2 desktop">
-                        <img src="img/comedians.jpg" class="img-fluid">
-                    </div>
-                  </div>
-              </div>
-            </div>
-  
-          </div>
-        <a class="carousel-control-prev" href="#carouselExampleControls2" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleControls2" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
-    </div>
-  <!--TRENDING MOVIES SECTION END-->
-
-
-<!--FOOTER START-->
-<footer  class="mx-auto">
-<div class="container mt-5 mb-3 align-baseline mx-auto">
-    <div class="socials mb-2">
-        <i class="fab fa-facebook-square"></i>
-        <i class="fab fa-instagram"></i>
-        <i class="fab fa-twitter"></i>
-        <i class="fab fa-youtube"></i>
-         </div>
-    <div class="row">
-        <div class="col-sm-12 col-md-3 footer mb-3">        
-        <a class="align-baseline d-block footer-link">Audio and subtitles</a>
-        <a class="align-baseline d-block footer-link">Media center</a>
-        <a class="align-baseline d-block footer-link">Privacy</a>
-        <a class="align-baseline d-block footer-link">Contact us</a>
-        <button class="btn-sm mt-3 btn-footer">Service center</button>
+        <div class="input-group-append" id="lastbtn">
+            <input class="btn btn-outline-secondary" type="submit" id="buttonforassign" value="Assign"
+                onclick="teamAssign()">
+            <input class="btn btn-outline-secondary" type="reset" id="resetbtn" value="Reset"
+                onClick="window.location.reload()">
         </div>
-        <div class="col-sm-12 col-md-3 footer mb-3">
-            <a class="align-baseline d-block footer-link">Audio description</a>
-            <a class="align-baseline d-block footer-link">Speed test</a>
-            <a class="align-baseline d-block footer-link">Investor Relations</a>
-        </div>
-        <div class="col-sm-12 col-md-3 footer mb-3">
-            <a class="align-baseline d-block footer-link">Help Center</a>
-            <a class="align-baseline d-block footer-link">Jobs</a>
-            <a class="align-baseline d-block footer-link">Cookies preferences</a>
-        </div>
-        <div class="col-sm-12 col-md-3 mb-3">
-            <a class="align-baseline d-block footer-link">Gift cards</a>
-            <a class="align-baseline d-block footer-link">Terms of use</a>
-            <a class="align-baseline d-block footer-link">Corporate informations</a>
-        </div>
-    </div>
-</div>
-</footer>
-<!--FOOTER END-->
 
 
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+        <script src="/index.js"></script>
+    </body>
 
-    <!-- Optional JavaScript -->
-    <script src="index.js"></script>
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-  </body>
 </html>
