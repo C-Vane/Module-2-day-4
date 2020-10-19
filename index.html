@@ -31,10 +31,10 @@
         </nav>
         <div class="container">
             <h4><b>/</b>List of Names</h4><br>
-            <ul id="list">
-
-            </ul>
-
+            <div id="divlist" class="row">
+                <ul id="list0" class="col col-12 col-md-6 col-lg-3 mx-3 my-3">
+                </ul>
+            </div>
             <div class="input-group mb-3">
 
                 <input type="text" id="name" class="form-control w-4" placeholder="Add Name" aria-label="name"
@@ -50,27 +50,31 @@
             <div class="input-group mb-3">
 
                 <input id="numteams" type="number" min="0" max="60" value="2" class="form-control"
-                    aria-label="NUmber of Teams" aria-describedby="button-addon">
+                    aria-label="Number of Teams" aria-describedby="button-addon">
                 <div class="input-group-append">
-                    <input class="btn btn-outline-secondary" type="submit" id="button-addon" value="Create Table"
+                    <input class="btn btn-outline-secondary" type="submit" id="button-addon" value="Create Teams"
                         onclick="teamTable()">
                 </div>
 
             </div>
         </div>
 
-        <div class="container" id="teamslist">
+        <div class="container">
+            <div class="row no-gutters text-center" id="teamslist">
+
+            </div>
 
 
         </div>
         <div class="input-group-append" id="lastbtn">
-            <!--Team asign-->
             <input class="btn btn-outline-secondary" type="submit" id="buttonforassign" value="Assign"
                 onclick="teamAssign()">
-            <!--reload-->
+            <input class="btn btn-outline-secondary" type="submit" id="buttonforassignall" value="Assign All"
+                onclick="teamAssignAll()">
             <input class="btn btn-outline-secondary" type="reset" id="resetbtn" value="Reset"
                 onClick="window.location.reload()">
         </div>
+
 
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
