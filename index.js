@@ -8,7 +8,7 @@ add.addEventListener("keypress", function (event) {
   }
 });
 let li = 0;
-//addig names to the list
+//adding names to the list
 const addName = () => {
   const new_name = document.getElementById("name");
   const ul_item = document.getElementById("list" + li);
@@ -50,6 +50,7 @@ const teamTable = () => {
       table.setAttribute("class", "col col-12 col-md-6 col-lg-3  my-5");
       const title = document.createElement("h4");
       title.innerText = "TEAM " + String.fromCharCode(65 + i);
+      title.style.backgroundColor = randomColor();
       table.appendChild(title);
       table_destination.appendChild(table);
 
